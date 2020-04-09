@@ -16,8 +16,10 @@ function print_movie(response) {
 	data = response.data
 	print(data.Title);
 	print(data.Year);
-	print(data.Ratings[0]);
-	print(data.Ratings[1]);
+	if (data.Ratings) {
+		print(data.Ratings[0]);
+		print(data.Ratings[1]);
+	}
 	print(data.Country);
 	console.log("");
 	print(data.Plot);

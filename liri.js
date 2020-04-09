@@ -1,3 +1,4 @@
+var bands = require("./bands.js");
 var spotify = require("./spotify.js");
 var omdb = require("./omdb.js");
 var fs = require("fs");
@@ -8,7 +9,7 @@ function run_file(err, data) {
 		return;
 	}
 
-	run(data.split(","));
+	run(data.split(','));
 }
 
 function get_parameter(input) {
@@ -21,6 +22,10 @@ function get_parameter(input) {
 
 function run(input) {
 	switch(input[0]) {
+	case "concert-this":
+		bands(get_parameter(input));
+		break;
+
 	case "spotify-this-song":
 		spotify(get_parameter(input));
 		break;
