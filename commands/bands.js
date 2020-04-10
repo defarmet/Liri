@@ -26,6 +26,9 @@ function print_events(response) {
 }
 
 module.exports = function(artist) {
+	if (!artist) {
+		console.log("USAGE: node ./liri.js concert-this <artist-name>");
+	}
 	artist = artist.replace(/\s+/g, '');
 	axios(url + artist + id, print_events);
 }

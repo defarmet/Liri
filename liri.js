@@ -39,7 +39,12 @@ function run(input) {
 		break;
 
 	default:
-		console.log("TEST");
+		console.log("USAGE: node ./liri-js <command> [name]");
+		console.log("COMMANDS:");
+		console.log("	concert-this <artist-name>");
+		console.log("	spotify-this-song [song-name]");
+		console.log("	movie-this [movie-name]");
+		console.log("	do-what-it-says");
 	}
 }
 
