@@ -1,23 +1,17 @@
 var moment = require("moment");
-var axios = require("./axios.js");
+var axios = require("./libs/axios.js");
+var print = require("./libs/print.js");
 
 var url = "https://rest.bandsintown.com/artists/"
 var id = "/events?app_id=codingbootcamp"
 
-function print(data) {
-	if (data && data !== "" && data !== ", , ") {
-		console.log(data);
-		console.log("");
-	}
-}
-
 function print_event(value) {
 	var venue = value.venue;
-	print(venue.name);
+	print("VENUE", venue.name, "");
 	var loc = venue.city + ", " + venue.region + ", " + venue.country;
-	print(loc);
+	print("LOCATION", loc, ", , ");
 	var date = moment(value.datetime).format("MM/DD/YYYY");
-	print(date);
+	print("DATE", date, "");
 	console.log("");
 }
 

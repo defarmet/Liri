@@ -1,6 +1,6 @@
-var bands = require("./bands.js");
-var spotify = require("./spotify.js");
-var omdb = require("./omdb.js");
+var bands = require("./commands/bands.js");
+var spotify = require("./commands/spotify.js");
+var omdb = require("./commands/omdb.js");
 var fs = require("fs");
 
 function run_file(err, data) {
