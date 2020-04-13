@@ -3,6 +3,12 @@ var spotify = require("./commands/spotify.js");
 var omdb = require("./commands/omdb.js");
 var fs = require("fs");
 
+function append(err) {
+	if (err) {
+		console.log(err);
+	}
+}
+
 function run_file(err, data) {
 	if (err) {
 		console.log(err);
@@ -21,6 +27,7 @@ function get_parameter(input) {
 }
 
 function run(input) {
+	fs.appendFile("log.txt", input + "\n", append);
 	switch(input[0]) {
 	case "concert-this":
 		bands(get_parameter(input));
@@ -39,7 +46,7 @@ function run(input) {
 		break;
 
 	default:
-		console.log("USAGE: node ./liri-js <command> [name]");
+		console.log("USAGE: node liri <command> [name]");
 		console.log("COMMANDS:");
 		console.log("	concert-this <artist-name>");
 		console.log("	spotify-this-song [song-name]");
