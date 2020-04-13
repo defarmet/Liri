@@ -1,6 +1,6 @@
 # Liri
 
-USAGE: node ./liri-js <command> [name]
+USAGE: node liri <command> [name]
 COMMANDS:  
         concert-this \<artist-name\>  
         spotify-this-song [song-name]  
